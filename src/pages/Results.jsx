@@ -46,7 +46,7 @@ function Results(props) {
 
   // console.log(rows);
 
-console.log(data);
+  // console.log(data);
 
   return (
     <div className='results'>
@@ -83,8 +83,8 @@ console.log(data);
 
 export default Results;
 
-
-        {/* //   {rows.map((row, i) => (
+{
+  /* //   {rows.map((row, i) => (
         //     <Row key={i}>
         //       {row.map((col, index) => (
         //         <Col key={index}>
@@ -92,4 +92,5 @@ export default Results;
         //         </Col>
         //       ))}
         //     </Row>
-        //   ))} */}
+        //   ))} */
+}
