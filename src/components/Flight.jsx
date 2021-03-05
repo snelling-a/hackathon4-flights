@@ -20,6 +20,7 @@ function Flight(props) {
         <Card.Body>
           <Card.Title>Price: €{props.flight.price}</Card.Title>
           <Card.Subtitle className='mb-2 text-muted'>
+           From: {props.flight.cityFrom} <br/> To: {props.flight.cityTo}<br/>
             Availability: {props.flight.availability.seats}
           </Card.Subtitle>
           <Card.Text>
