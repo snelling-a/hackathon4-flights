@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Index from './pages/Index';
 import NavBar from './components/NavBar';
 import Results from './pages/Results';
+import Booking from './pages/Booking';
 
 function App() {
   return (
@@ -14,6 +15,10 @@ function App() {
           <Route
             path='/search/results/:from/:to'
             component={Results}
+          />
+          <Route
+            path='/booking/:id'
+            component={Booking}
           />
           {/* <Route path='/results' component={Results} /> */}
         </Switch>

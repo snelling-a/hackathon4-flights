@@ -16,7 +16,7 @@ function Results(props) {
   const [dep, setDep] = useState(props.match.params.from);
   const [dest, setDest] = useState(props.match.params.to);
 
-  console.log(props.match.params.to);
+  // console.log(props.match.params.to);
 
   function getData($dep, $dest) {
     try {
@@ -25,7 +25,6 @@ function Results(props) {
           `https://api.skypicker.com/flights?fly_from=${dep}&fly_to=${dest}&partner=picky`
         )
         .then((response) => {
-          console.log(response);
           setData(response.data.data);
           setLoading(false);
         });
@@ -47,6 +46,8 @@ function Results(props) {
 //   }, []);
 //   console.log(rows);
 
+console.log(data);
+
   return (
     <div className="results">
       {loading ? (
@@ -54,8 +55,30 @@ function Results(props) {
         //   <span className='sr-only'>Loading...</span>
         // </Spinner>
         <Plane height={150} width={150} />
-      ) : (
-        <Container>
+      ) : data.length
+
+      ?
+
+      (<Container>
+           <Row>
+            {data.map((flight, index) => (
+              <Col>
+                <Flight key={index} flight={flight} />
+              </Col>
+            ))}
+          </Row>
+        </Container>)
+
+    : ("sorry, no flights. Covid sucks.")
+
+      }
+    </div>
+  );
+}
+
+export default Results;
+
+
         {/* //   {rows.map((row, i) => (
         //     <Row key={i}>
         //       {row.map((col, index) => (
@@ -65,17 +88,3 @@ function Results(props) {
         //       ))}
         //     </Row>
         //   ))} */}
-           <Row>
-            {data.map((flight, index) => (
-              <Col>
-                <Flight key={index} flight={flight} />
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      )}
-    </div>
-  );
-}
-
-export default Results;
