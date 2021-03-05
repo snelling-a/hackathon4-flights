@@ -33,6 +33,17 @@ function Results() {
     getData();
   }, []);
 
+  if (!data) {
+    return null;
+  }
+  const rows = data.reduce(function (rows, key, index) {
+    return (
+      (index % 4 === 0 ? rows.push([key]) : rows[rows.length - 1].push(key)) &&
+      rows
+    );
+  }, []);
+  console.log(rows);
+
   return (
     <div className='results'>
       {loading ? (
@@ -41,13 +52,22 @@ function Results() {
         </Spinner>
       ) : (
         <Container>
-          <Row>
+          {rows.map((row, i) => (
+            <Row key={i}>
+              {row.map((col, index) => (
+                <Col key={col.index}>
+                  <Flight flight={col.flight} />
+                </Col>
+              ))}
+            </Row>
+          ))}
+          {/* <Row>
             {data.map((flight, index) => (
               <Col>
                 <Flight key={index} flight={flight} />
               </Col>
             ))}
-          </Row>
+          </Row> */}
         </Container>
       )}
     </div>
