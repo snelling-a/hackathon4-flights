@@ -12,15 +12,15 @@ const Index = () => {
       <Form>
         <Row>
           <Col>
-            <Form.Control placeholder='First name' />
+            <Form.Control placeholder='From' />
           </Col>
           <Col>
-            <Form.Control placeholder='Last name' />
+            <Form.Control placeholder='To' />
           </Col>
         </Row>
       </Form>
       <p>
-        <Button variant='primary'>Learn more</Button>
+        <Button variant='primary'>Search</Button>
       </p>
     </Jumbotron>
   );
