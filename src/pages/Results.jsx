@@ -1,14 +1,14 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 //componts
-import Flight from "../components/Flight";
-import {Plane} from "../components/Plane";
+import Flight from '../components/Flight';
+import { Plane } from '../components/Plane';
 
 //bootstrap
-import Spinner from "react-bootstrap/Spinner";
-import { Container, Row, Col } from "react-bootstrap";
+import Spinner from 'react-bootstrap/Spinner';
+import { Container, Row, Col } from 'react-bootstrap';
 
 function Results(props) {
   const [data, setData] = useState(null);
@@ -22,9 +22,13 @@ function Results(props) {
     try {
       axios
         .get(
-          `https://api.skypicker.com/flights?fly_from=${dep}&fly_to=${dest}&partner=picky`
+          `https://api.skypicker.com/flights?fly_from=${dep}&fly_to=${dest}&partner=picky`,
         )
         .then((response) => {
+<<<<<<< HEAD
+=======
+          // console.log(response);
+>>>>>>> 18f7cefc362dd3ecc0facb1e0dbe973109591850
           setData(response.data.data);
           setLoading(false);
         });
@@ -37,24 +41,25 @@ function Results(props) {
     getData();
   }, []);
 
+  // const rows = data.reduce(function (rows, key, index) {
+  //   return (
+  //     (index % 4 === 0 ? rows.push([key]) : rows[rows.length - 1].push(key)) &&
+  //     rows
+  //   );
+  // }, []);
 
-//   const rows = data.reduce(function (rows, key, index) {
-//     return (
-//       (index % 4 === 0 ? rows.push([key]) : rows[rows.length - 1].push(key)) &&
-//       rows
-//     );
-//   }, []);
-//   console.log(rows);
+  // console.log(rows);
 
 console.log(data);
 
   return (
-    <div className="results">
+    <div className='results'>
       {loading ? (
         // <Spinner animation='border' role='status'>
         //   <span className='sr-only'>Loading...</span>
         // </Spinner>
         <Plane height={150} width={150} />
+<<<<<<< HEAD
       ) : data.length
 
       ?
@@ -72,6 +77,30 @@ console.log(data);
     : ("sorry, no flights. Covid sucks.")
 
       }
+=======
+      ) : (
+        <Container>
+          {/* {rows.map((row, i) => (
+            <Row key={i}>
+              {row.map((col, index) => (
+                <Col key={index}>
+                  <Flight flight={col.flight} />
+                </Col>
+              ))}
+            </Row>
+          ))} */}
+          {
+            <Row>
+              {data.map((flight, index) => (
+                <Col key={index}>
+                  <Flight flight={flight} />
+                </Col>
+              ))}
+            </Row>
+          }
+        </Container>
+      )}
+>>>>>>> 18f7cefc362dd3ecc0facb1e0dbe973109591850
     </div>
   );
 }
