@@ -2,8 +2,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-//pages
+//components
 import Flight from "../components/Flight";
+import {Plane} from '../components/Plane';
 
 //bootstrap
 import Spinner from "react-bootstrap/Spinner";
@@ -41,9 +42,14 @@ function Results(props) {
   return (
     <div className="results">
       {loading ? (
-        <Spinner animation="border" role="status">
-          <span className="sr-only">Loading...</span>
-        </Spinner>
+        // <Spinner animation="border" role="status">
+        //   <span className="sr-only">Loading...</span>
+        // </Spinner>
+        <Plane
+		
+		height={150}
+		width={150}
+	/>
       ) : (
         data.map((flight, index) => <Flight key={index} flight={flight} />)
       )}
