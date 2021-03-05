@@ -1,0 +1,14 @@
+.home {
+  background: url(../img/jumbo-bg.jpg) no-repeat center center fixed;
+  width: 100vw;
+  height: 100vh;
+  /* FLEX */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .jumbotron {
+    width: 70%;
+  }
+}
