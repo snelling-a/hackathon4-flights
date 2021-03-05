@@ -8,12 +8,12 @@ const SearchForm = () => {
 
   function handleChangeDep(e) {
     setDep(e.target.value);
-    console.log(dep);
+    // console.log(dep);
   }
 
   function handleChangeDest(e) {
     setDest(e.target.value);
-    console.log(dest);
+    // console.log(dest);
   }
   return (
     <Form>

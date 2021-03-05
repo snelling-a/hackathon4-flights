@@ -9446,6 +9446,11 @@
     "object-assign" "^4.1.1"
     "react-is" "^16.8.1"
 
+"prototypes@^3.0.3":
+  "integrity" "sha512-sHxIwtxDqTkuWL+w6pxg7CnRuoPJ+/6GSupQfMp1MBexquckgJL/B09pQW+aMCaVgrOsYhw/o6F1KWHlsouw6w=="
+  "resolved" "https://registry.npmjs.org/prototypes/-/prototypes-3.0.3.tgz"
+  "version" "3.0.3"
+
 "proxy-addr@~2.0.5":
   "integrity" "sha512-dh/frvCBVmSsDYzw6n926jv974gddhkFPfiN8hPOi30Wax25QZyZEGveluCgliBnqmuM+UJmBErbAUFIoDbjOw=="
   "resolved" "https://registry.npmjs.org/proxy-addr/-/proxy-addr-2.0.6.tgz"

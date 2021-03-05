@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Index from './pages/Index';
 import NavBar from './components/NavBar';
 import Results from './pages/Results';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -11,16 +12,13 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path='/' component={Index} />
-          <Route
-            path='/search/results/:from/:to'
-            component={Results}
-          />
+          <Route path='/search/results/:from/:to' component={Results} />
           {/* <Route path='/results' component={Results} /> */}
         </Switch>
+        <Footer />
       </Router>
     </div>
   );
 }
 
 export default App;
-
