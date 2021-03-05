@@ -9,6 +9,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path='/' component={Index} />
+          <Route path='/search/results/:to/:from/:dep/:ret' component={Index} />
         </Switch>
       </Router>
     </div>

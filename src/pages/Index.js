@@ -1,5 +1,6 @@
 import React from 'react';
 import { Jumbotron, Button, Form, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Index = () => {
   return (
@@ -17,11 +18,13 @@ const Index = () => {
           <Col>
             <Form.Control placeholder='To' />
           </Col>
+          <Col>
+            <Link to={`/search/results/VAL/PRG/deptdate/retdate`}>
+              <Button variant='primary'>Search</Button>
+            </Link>
+          </Col>
         </Row>
       </Form>
-      <p>
-        <Button variant='primary'>Search</Button>
-      </p>
     </Jumbotron>
   );
 };
