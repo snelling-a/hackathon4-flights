@@ -7,17 +7,21 @@ import Flight from '../components/Flight';
 
 //bootstrap
 import Spinner from 'react-bootstrap/Spinner';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
-function Results() {
+function Results(props) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [dep, setDep] = useState(props.match.params.from);
+  const [dest, setDest] = useState(props.match.params.to);
 
-  function getData() {
+  console.log(props.match.params.to);
+
+  function getData($dep, $dest) {
     try {
       axios
         .get(
-          `https://api.skypicker.com/flights?fly_from=PR&fly_to=VCL&partner=picky`,
+          `https://api.skypicker.com/flights?fly_from=${dep}&fly_to=${dest}&partner=picky`,
         )
         .then((response) => {
           console.log(response);

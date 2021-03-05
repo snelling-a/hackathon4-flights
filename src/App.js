@@ -12,10 +12,10 @@ function App() {
         <Switch>
           <Route exact path='/' component={Index} />
           <Route
-            path='/search/results/:to/:from/:dep/:ret'
+            path='/search/results/:from/:to'
             component={Results}
           />
-          <Route path='/results' component={Results} />
+          {/* <Route path='/results' component={Results} /> */}
         </Switch>
       </Router>
     </div>
@@ -23,3 +23,4 @@ function App() {
 }
 
 export default App;
+
