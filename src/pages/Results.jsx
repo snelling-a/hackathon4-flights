@@ -59,7 +59,7 @@ function Results(props) {
           {rows.map((row, i) => (
             <Row key={i}>
               {row.map((col, index) => (
-                <Col key={col.index}>
+                <Col key={index}>
                   <Flight flight={col.flight} />
                 </Col>
               ))}

@@ -1,33 +1,47 @@
-import React from 'react';
-import { Form } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Form, Row, Col, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const SearchForm = () => {
+  const [dest, setDest] = useState('');
+  const [dep, setDep] = useState('');
+
+  function handleChangeDep(e) {
+    setDep(e.target.value);
+    console.log(dep);
+  }
+
+  function handleChangeDest(e) {
+    setDest(e.target.value);
+    console.log(dest);
+  }
   return (
     <Form>
-      <Form.Group controlId='exampleForm.ControlInput1'>
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type='email' placeholder='name@example.com' />
-      </Form.Group>
-      <Form.Group controlId='exampleForm.ControlSelect1'>
-        <Form.Label>Example select</Form.Label>
-        <Form.Control as='select' /* onChange={handleChange} */>
-          <option value='VAL'>Valencia</option>
-          <option value='BCN'>Barcelona</option>
-          <option value='MAD'>Madrid</option>
-          <option value='MXP'>Milano</option>
-          <option value='ATH'>Athens</option>
-        </Form.Control>
-      </Form.Group>
-      <Form.Group controlId='exampleForm.ControlSelect2'>
-        <Form.Label>Example multiple select</Form.Label>
-        <Form.Control as='select' multiple>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </Form.Control>
-      </Form.Group>
+      <Row>
+        <Col>
+          <Form.Control as='select' onChange={handleChangeDep}>
+            <option>Departure</option>
+            <option value='PRG'>Prague</option>
+            <option value='BER'>Berlin</option>
+            <option value='WAW'>Warsaw</option>
+            <option value='JFK'>New York</option>
+            <option value='VIE'>Vienna</option>
+          </Form.Control>
+        </Col>
+        <Col>
+          <Form.Control as='select' onChange={handleChangeDest}>
+            <option>Where to?</option>
+            <option value='VAL'>Valencia</option>
+            <option value='BCN'>Barcelona</option>
+            <option value='MAD'>Madrid</option>
+            <option value='MXP'>Milano</option>
+            <option value='ATH'>Athens</option>
+          </Form.Control>
+        </Col>
+        <Link to={`/search/results/${dep}/${dest}`}>
+          <Button variant='primary'>Search</Button>
+        </Link>
+      </Row>
     </Form>
   );
 };
