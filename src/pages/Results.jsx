@@ -25,10 +25,6 @@ function Results(props) {
           `https://api.skypicker.com/flights?fly_from=${dep}&fly_to=${dest}&partner=picky`,
         )
         .then((response) => {
-<<<<<<< HEAD
-=======
-          // console.log(response);
->>>>>>> 18f7cefc362dd3ecc0facb1e0dbe973109591850
           setData(response.data.data);
           setLoading(false);
         });
@@ -59,25 +55,6 @@ console.log(data);
         //   <span className='sr-only'>Loading...</span>
         // </Spinner>
         <Plane height={150} width={150} />
-<<<<<<< HEAD
-      ) : data.length
-
-      ?
-
-      (<Container>
-           <Row>
-            {data.map((flight, index) => (
-              <Col>
-                <Flight key={index} flight={flight} />
-              </Col>
-            ))}
-          </Row>
-        </Container>)
-
-    : ("sorry, no flights. Covid sucks.")
-
-      }
-=======
       ) : (
         <Container>
           {/* {rows.map((row, i) => (
@@ -100,7 +77,6 @@ console.log(data);
           }
         </Container>
       )}
->>>>>>> 18f7cefc362dd3ecc0facb1e0dbe973109591850
     </div>
   );
 }

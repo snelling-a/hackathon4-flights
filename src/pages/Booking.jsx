@@ -6,8 +6,10 @@ function Booking(props) {
 
   return (
     <>
-    testing booking
-    </>
+<h1>
+      testing booking
+
+</h1>     </>
   );
 }
 

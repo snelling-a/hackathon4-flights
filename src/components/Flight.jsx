@@ -1,8 +1,8 @@
 import { Card } from 'react-bootstrap';
 import { DateTime } from 'luxon';
 import { BrowserRouter as Link, Router, Route, Switch } from 'react-router-dom';
-import Booking from "../pages/Booking";
-import { LinkContainer } from 'react-router-bootstrap'
+import Booking from '../pages/Booking';
+import { LinkContainer } from 'react-router-bootstrap';
 
 function Flight(props) {
   // DateTime.fromMillis(datetimeFromREST * 1000).toFormat('hh:mm');
@@ -23,7 +23,8 @@ function Flight(props) {
         <Card.Body>
           <Card.Title>Price: €{props.flight.price}</Card.Title>
           <Card.Subtitle className='mb-2 text-muted'>
-           From: {props.flight.cityFrom} <br/> To: {props.flight.cityTo}<br/>
+            From: {props.flight.cityFrom} <br /> To: {props.flight.cityTo}
+            <br />
             Availability: {props.flight.availability.seats}
           </Card.Subtitle>
           <Card.Text>
@@ -41,9 +42,8 @@ function Flight(props) {
           <Link  >Book Me!!!!!</Link> */}
 
           <LinkContainer to={`/booking/${props.flight.id}`} component={Booking}>
-          Book it!
+            <Card.Link>Book it!</Card.Link>
           </LinkContainer>
-          
         </Card.Body>
       </Card>
     </>

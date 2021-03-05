@@ -1,7 +1,8 @@
 .home {
   background: url(../img/jumbo-bg.jpg) no-repeat center center fixed;
   width: 100vw;
-  flex: 1; /* FLEX */
+  height: 100vh;
+  /* FLEX */
   display: flex;
   flex-direction: column;
   justify-content: center;
