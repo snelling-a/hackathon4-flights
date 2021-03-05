@@ -1,5 +1,6 @@
 import './scss/App.scss';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Index from './pages/Index';
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
       <h1>hackathon #4</h1>
       <Router>
         <Switch>
-          <Route />
+          <Route exact path='/' component={Index} />
         </Switch>
       </Router>
     </div>
