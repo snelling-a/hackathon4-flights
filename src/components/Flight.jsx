@@ -1,6 +1,9 @@
 import { Card } from 'react-bootstrap';
+import { DateTime } from 'luxon';
 
 function Flight(props) {
+  // DateTime.fromMillis(datetimeFromREST * 1000).toFormat('hh:mm');
+
   return (
     <>
       {/* <div>
@@ -20,8 +23,14 @@ function Flight(props) {
             Availability: {props.flight.availability.seats}
           </Card.Subtitle>
           <Card.Text>
-            <li>Takeoff: {props.flight.dTime}</li>
-            <li>Landing: {props.flight.dTime}</li>
+            <li>
+              Takeoff:{' '}
+              {DateTime.fromMillis(props.flight.dTime * 1000).toFormat('hh:mm')}
+            </li>
+            <li>
+              Landing:{' '}
+              {DateTime.fromMillis(props.flight.aTime * 1000).toFormat('hh:mm')}
+            </li>
           </Card.Text>
 
           <Card.Link href='#'>Book it!</Card.Link>
