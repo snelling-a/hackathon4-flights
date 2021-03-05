@@ -5,6 +5,7 @@ import NavBar from './components/NavBar';
 import Results from './pages/Results';
 import Booking from './pages/Booking';
 import Footer from './components/Footer';
+import Test from './pages/Test';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route exact path='/' component={Index} />
           <Route path='/search/results/:from/:to' component={Results} />
           <Route path='/booking/:id' component={Booking} />
+          <Route path='/test' component={Test} />
 
           {/* <Route path='/results' component={Results} /> */}
         </Switch>
