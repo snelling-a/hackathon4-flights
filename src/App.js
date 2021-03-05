@@ -11,7 +11,10 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path='/' component={Index} />
-          <Route path='/search/results/:to/:from/:dep/:ret' component={Index} />
+          <Route
+            path='/search/results/:to/:from/:dep/:ret'
+            component={Results}
+          />
           <Route path='/results' component={Results} />
         </Switch>
       </Router>

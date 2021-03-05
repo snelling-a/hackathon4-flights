@@ -10,7 +10,7 @@ import {
 
 const NavBar = () => {
   return (
-    <Navbar fixed='top' bg='light' expand='lg'>
+    <Navbar /* fixed='top' */ bg='light' expand='lg'>
       <Navbar.Brand href='#home'>Not Kiwi</Navbar.Brand>
       <Navbar.Toggle aria-controls='basic-navbar-nav' />
       <Navbar.Collapse id='basic-navbar-nav'>
