@@ -83,8 +83,7 @@ function Results(props) {
 
 export default Results;
 
-{
-  /* //   {rows.map((row, i) => (
+/* //   {rows.map((row, i) => (
         //     <Row key={i}>
         //       {row.map((col, index) => (
         //         <Col key={index}>
@@ -93,4 +92,3 @@ export default Results;
         //       ))}
         //     </Row>
         //   ))} */
-}
